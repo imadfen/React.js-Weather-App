@@ -46,7 +46,7 @@ function LocationSearch({ onClose, changeLocation }: propsType) {
                     setSearching(false)
                 }
             })
-            .catch(err => {
+            .catch(() => {
                 setError("it seems there is an error, try again later")
                 setSearching(false)
             })

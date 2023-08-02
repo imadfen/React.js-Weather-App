@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import LeftSection from "./components/LeftSection"
-import fetchApi from "./utils/fetchApi";
+import fetchApi from "../utils/fetchApi";
 import RightSection from "./components/RightSection";
-import getUserLocation from "./utils/getUserLocation";
+import getUserLocation from "../utils/getUserLocation";
 import { Bars } from "react-loader-spinner";
 
 function App() {

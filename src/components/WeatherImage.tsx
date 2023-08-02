@@ -1,5 +1,5 @@
 import CloudsBG from "../assets/Cloud-background.png"
-import conditionImageSelecter from "../utils/conditionImageSelecter"
+import conditionImageSelecter from "../../utils/conditionImageSelecter"
 
 function WeatherImage({ condCode, condText }: { condCode: number, condText: string }) {
     return (

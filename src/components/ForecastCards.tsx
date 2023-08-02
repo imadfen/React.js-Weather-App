@@ -1,5 +1,5 @@
-import conditionImageSelecter from "../utils/conditionImageSelecter"
-import dateFormatter from "../utils/dateFormatter"
+import conditionImageSelecter from "../../utils/conditionImageSelecter"
+import dateFormatter from "../../utils/dateFormatter"
 
 interface propsType {
     forecast: any[],

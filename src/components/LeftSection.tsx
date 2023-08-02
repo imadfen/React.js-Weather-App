@@ -1,12 +1,12 @@
 import { useState } from "react"
-import dateFormatter from "../utils/dateFormatter"
-import isToday from "../utils/isToday"
+import dateFormatter from "../../utils/dateFormatter"
+import isToday from "../../utils/isToday"
 import GPSIcon from "./icon components/GPSIcon"
 import LocationIcon from "./icon components/LocationIcon"
 import WeatherImage from "./WeatherImage"
 import LocationSearch from "./LocationSearch"
-import smallFontTemp from "../utils/smallFontTemp"
-import getUserLocation from "../utils/getUserLocation"
+import smallFontTemp from "../../utils/smallFontTemp"
+import getUserLocation from "../../utils/getUserLocation"
 
 interface propsType {
     data: any,

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import XIcon from "./icon components/XIcon"
 import SearchIcon from "./icon components/SearchIcon"
-import fetchApi from "../utils/fetchApi"
+import fetchApi from "../../utils/fetchApi"
 import RightArrowIcon from "./icon components/RightArrowIcon"
 
 interface propsType {
@@ -46,7 +46,7 @@ function LocationSearch({ onClose, changeLocation }: propsType) {
                     setSearching(false)
                 }
             })
-            .catch(err => {
+            .catch(() => {
                 setError("it seems there is an error, try again later")
                 setSearching(false)
             })

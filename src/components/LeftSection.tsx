@@ -46,16 +46,16 @@ function LeftSection({ data, degreeUnit, location, changeLocation }: propsType) 
                 }
             </div>
 
-            <WeatherImage condCode={data.condition.code} condText="cloudy" />
+            <WeatherImage condCode={data.condition.code} condText={data.condition.text} />
 
-            <div className="flex items-baseline w-full justify-center py-10">
-                <p className={`${smallFontTemp(tempDegree) ? "text-8xl" : "text-9xl"} font-medium`}>{tempDegree}</p>
-                <p className="text-5xl font-medium">°{degreeUnit}</p>
+            <div className="flex items-baseline w-full justify-center py-7">
+                <p className={`${smallFontTemp(tempDegree) ? "text-7xl" : "text-8xl"} font-medium`}>{tempDegree}</p>
+                <p className="text-4xl font-medium">°{degreeUnit}</p>
             </div>
 
-            <p className="text-4xl font-semibold text-center">{data.condition.text}</p>
+            <p className="text-3xl font-semibold text-center">{data.condition.text}</p>
 
-            <div className="flex w-1/2 justify-center gap-3 mx-auto py-6 opacity-50">
+            <div className="flex w-1/2 justify-center gap-3 mx-auto py-4 opacity-50">
                 {isToday(data.last_updated) &&
                     <>
                         <p>Today</p>
@@ -65,7 +65,7 @@ function LeftSection({ data, degreeUnit, location, changeLocation }: propsType) 
                 <p>{dateFormatter(data.last_updated)}</p>
             </div>
 
-            <div className="flex items-center justify-center whitespace-normal text-lg w-full mx-auto opacity-50">
+            <div className="flex items-center justify-center gap-2 whitespace-normal text-lg w-full mx-auto opacity-50">
                 <LocationIcon />
                 <p className="max-w-[70%]">{location.name}, {location.region}</p>
             </div>

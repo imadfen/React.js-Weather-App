@@ -49,13 +49,13 @@ function LeftSection({ data, degreeUnit, location, changeLocation }: propsType) 
             <WeatherImage condCode={data.condition.code} condText={data.condition.text} />
 
             <div className="flex items-baseline w-full justify-center py-7">
-                <p className={`${smallFontTemp(tempDegree) ? "text-7xl" : "text-8xl"} font-medium`}>{tempDegree}</p>
+                <p className={`${smallFontTemp(tempDegree) ? "text-8xl md:text-7xl" : "text-9xl md:text-8xl"} font-medium`}>{tempDegree}</p>
                 <p className="text-4xl font-medium">°{degreeUnit}</p>
             </div>
 
-            <p className="text-3xl font-semibold text-center">{data.condition.text}</p>
+            <p className="text-4xl md:text-3xl font-semibold text-center">{data.condition.text}</p>
 
-            <div className="flex w-1/2 justify-center gap-3 mx-auto py-4 opacity-50">
+            <div className="flex w-1/2 justify-center gap-3 mx-auto py-6 md:py-4 opacity-50">
                 {isToday(data.last_updated) &&
                     <>
                         <p>Today</p>

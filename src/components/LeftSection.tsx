@@ -5,31 +5,51 @@ import GPSIcon from "./icon components/GPSIcon"
 import LocationIcon from "./icon components/LocationIcon"
 import WeatherImage from "./WeatherImage"
 import LocationSearch from "./LocationSearch"
+import smallFontTemp from "../utils/smallFontTemp"
+import getUserLocation from "../utils/getUserLocation"
 
 interface propsType {
     data: any,
     degreeUnit: "C" | "F",
-    location: any
+    location: any,
+    changeLocation: (location: string) => void
 }
 
-function LeftSection({ data, degreeUnit, location }: propsType) {
+function LeftSection({ data, degreeUnit, location, changeLocation }: propsType) {
     const [openDrawer, setOpenDrawer] = useState(false)
 
+    const handleChooseLocation = (newLoc: string) => {
+        setOpenDrawer(false)
+        changeLocation(newLoc)
+    }
+
+    const handleChooseCurrentLocation = async () => {
+        const userLocation: any = await getUserLocation()
+        if (userLocation) {
+            changeLocation(`${userLocation.latitude},${userLocation.longitude}`)
+        } else {
+            alert("Couldn't get your current location")
+        }
+    }
+
+    const tempDegree = degreeUnit == "C" ? data.temp_c : data.temp_f
     return (
-        <div className="bg-[#1E213A] h-screen w-full overflow-hidden sticky top-0">
-            {openDrawer && <LocationSearch onClose={()=>setOpenDrawer(false)} />}
+        <div className="bg-[#1E213A] h-screen w-full overflow-hidden md:sticky top-0">
+            {openDrawer && <LocationSearch onClose={() => setOpenDrawer(false)} changeLocation={handleChooseLocation} />}
 
             <div className="flex justify-between px-2 pt-2 pb-10">
                 <button className="p-2 shadow lg" onClick={() => setOpenDrawer(true)}>Search for places</button>
-                <button className="rounded-full aspect-square p-2 shadow-lg">
-                    <GPSIcon fill="#e7e7eb" className="cursor-pointer" />
-                </button>
+                {"geolocation" in navigator &&
+                    <button className="rounded-full aspect-square p-2 shadow-lg" onClick={handleChooseCurrentLocation}>
+                        <GPSIcon fill="#e7e7eb" />
+                    </button>
+                }
             </div>
 
             <WeatherImage condCode={data.condition.code} condText="cloudy" />
 
             <div className="flex items-baseline w-full justify-center py-10">
-                <p className="text-9xl font-medium">{degreeUnit == "C" ? data.temp_c : data.temp_f}</p>
+                <p className={`${smallFontTemp(tempDegree) ? "text-8xl" : "text-9xl"} font-medium`}>{tempDegree}</p>
                 <p className="text-5xl font-medium">°{degreeUnit}</p>
             </div>
 
@@ -45,9 +65,9 @@ function LeftSection({ data, degreeUnit, location }: propsType) {
                 <p>{dateFormatter(data.last_updated)}</p>
             </div>
 
-            <div className="flex items-center text-lg w-fit mx-auto opacity-50">
+            <div className="flex items-center justify-center whitespace-normal text-lg w-full mx-auto opacity-50">
                 <LocationIcon />
-                <p>{location.name}, {location.region}</p>
+                <p className="max-w-[70%]">{location.name}, {location.region}</p>
             </div>
 
         </div>

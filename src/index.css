@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
 }
 
-* {
+p:not(.pointer) {
   cursor: default;
 }
 
@@ -48,17 +48,38 @@ button {
   transition: background-color 0.25s;
 }
 
-button:not(.disabled):hover {
+button:not([disabled]):hover {
   border-color: #3c47e9;
 }
 
-button:not(.disabled):active {
+button:not([disabled]):active {
   transform: scale(95%);
 }
 
-button.disabled {
+button[disabled] {
   background-color: #a4a6b6;
   color: #1e1e1f;
+}
+
+.searchInput[disabled] {
+  color: gray;
+}
+
+.searchButton[disabled] {
+  color: gray;
+  background-color: #29309b;
+  cursor: default;
+}
+
+.searchButton {
+  transition: transform 0.25s;
+}
+.searchButton:not([disabled]):active {
+  transform: scale(95%);
+}
+
+.location-result:hover .right-arrow {
+  opacity: 1;
 }
 
 .ProgressRoot {

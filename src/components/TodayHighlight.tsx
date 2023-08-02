@@ -2,7 +2,7 @@ import * as Progress from '@radix-ui/react-progress';
 import DirectionIcon from "./icon components/DirectionIcon"
 
 function TodayHighlight({ data }: any) {
-    const windDirectionDeg = data.wind_degree
+    const windDirDegStyle = { transform: `rotate(${data.wind_degree}deg)` };
 
     return (
         <div className="mt-14">
@@ -16,10 +16,14 @@ function TodayHighlight({ data }: any) {
                         <p className="text-4xl">kph</p>
                     </div>
                     <div className="mt-auto my-4 flex gap-3 items-center">
-                        <div className={`p-3 bg-gray-500 rounded-full rotate-[${windDirectionDeg}deg]`}>
-                            <DirectionIcon />
-                        </div>
-                        <p className="text-sm font-medium">{data.wind_dir}</p>
+                        {data.wind_degree &&
+                            <>
+                                <div className={`p-3 bg-gray-500 rounded-full`} style={windDirDegStyle}>
+                                    <DirectionIcon />
+                                </div>
+                                <p className="text-sm font-medium">{data.wind_dir}</p>
+                            </>
+                        }
                     </div>
                 </div>
 

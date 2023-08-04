@@ -8,7 +8,7 @@ interface propsType {
 
 function ForecastCards({ forecast, degreeUnit }: propsType) {
     return (
-        <div className="flex md:justify-around items-center gap-6 sm:gap-5 md:gap-4 mx-auto min-h-[190px] overflow-x-scroll  md:overflow-x-auto">
+        <div className="flex md:justify-around items-center gap-6 sm:gap-5 md:gap-4 mx-auto min-h-[190px] overflow-x-scroll  md:overflow-x-visible">
             {forecast.map((elem: any, i) => {
                 if (i == 0) return
 

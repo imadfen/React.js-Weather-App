@@ -63,14 +63,14 @@ function LocationSearch({ onClose, changeLocation }: propsType) {
                 <XIcon />
             </div>
 
-            <form className="flex gap-3 mt-3" onSubmit={handleSearch}>
+            <form className="flex justify-center gap-2 mt-3" onSubmit={handleSearch}>
                 <div className="border border-white flex items-center">
                     <label htmlFor="search-input" className=" w-[48px] flex place-content-center">
                         <SearchIcon fill="#616475" />
                     </label>
                     <input type="text" id="search-input" value={searchVal} placeholder="search location" className="outline-none bg-transparent h-[48px] searchInput" onChange={handleChangeSearchVal} disabled={searching} autoComplete="off" />
                 </div>
-                <input type="submit" className="px-2 bg-[#3c47e9] font-semibold cursor-pointer searchButton" value="Search" disabled={searching} />
+                <input type="submit" className="px-2 text-sm bg-[#3c47e9] font-semibold cursor-pointer searchButton" value="Search" disabled={searching} />
             </form>
 
             <div className="w-full h-auto px-1 my-10 flex flex-col items-center text-center">

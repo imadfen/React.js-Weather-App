@@ -36,7 +36,7 @@ git clone https://github.com/imadfen/React.js-Weather-App.git
 cd React.js-Weather-App
 ```
 
-3. **Create a .env file in the root of your project and set the encription key:**
+3. **Create a .env file in the root of your project and set it as follow:**
 
 ```env
 VITE_METEO_API_KEY=your_api_key_from_https://www.weatherapi.com/

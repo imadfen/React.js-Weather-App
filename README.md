@@ -36,7 +36,14 @@ git clone https://github.com/imadfen/React.js-Weather-App.git
 cd React.js-Weather-App
 ```
 
-3. **Install dependencies:**
+3. **Create a .env file in the root of your project and set the encription key:**
+
+```env
+VITE_METEO_API_KEY=your_api_key_from_https://www.weatherapi.com/
+VITE_METEO_API_URL='https://api.weatherapi.com/v1/forecast.json?days=7&aqi=no&alerts=no'
+```
+
+4. **Install dependencies:**
 ```bach
 npm install
 # or

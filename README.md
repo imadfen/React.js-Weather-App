@@ -1,31 +1,59 @@
-# React + TypeScript + Vite
+# React.js-Weather-App
 
-### Demo
+This is a weather app created with React.js using Vite and styled using Tailwind CSS.
+You can search for locations or simply use auto detect to locate your place weather.
 
-You can use the application by clicking [here](https://react-js-weather-app-roan.vercel.app/)
+## Table of Contents
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live demo of the application: [Demo Link](https://react-js-weather-app-roan.vercel.app/)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- [Vite](https://vitejs.dev/): A fast build tool that provides near-instant hot module replacement (HMR).
+- [React](https://reactjs.org/): A JavaScript library for building user interfaces.
+- [TypeScript](https://www.typescriptlang.org/): Typed superset of JavaScript.
+- [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Installation
+
+Follow these steps to get your project up and running:
+
+1. **Clone the repository:**
+```bach
+git clone https://github.com/imadfen/React.js-Weather-App.git
+```
+   
+2. **Navigate to the project directory:**
+```bach
+cd React.js-Weather-App
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. **Install dependencies:**
+```bach
+npm install
+# or
+yarn install
+```
+
+## Usage
+
+To use the application, follow these steps:
+
+1. **Run the development server:**
+```bach
+npm run dev
+# or
+yarn dev
+```
+
+2. **Open your browser:**
+
+Visit http://localhost:3000 to see your application in action.
